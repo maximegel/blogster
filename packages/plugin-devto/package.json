@@ -1,0 +1,20 @@
+{
+  "name": "@blogster/plugin-devto",
+  "version": "0.0.0",
+  "description": "",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.lib.json"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "peerDependencies": {
+    "@blogster/core": "^0.0.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.7"
+  }
+}

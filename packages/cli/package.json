@@ -1,0 +1,25 @@
+{
+  "name": "@blogster/cli",
+  "version": "0.0.0",
+  "description": "",
+  "bin": {
+    "bgs": "cli.js"
+  },
+  "files": [
+    "lib",
+    "cli.js"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.lib.json"
+  },
+  "dependencies": {
+    "@blogster/core": "^0.0.0",
+    "chalk": "^4.1.0",
+    "commander": "^6.1.0",
+    "strip-ansi": "^6.0.0",
+    "terminal-link": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "blogster",
+  "description": "Crosspost to Medium and Dev.to automagically",
+  "repository": "git@github.com:maximegel/blogster.git",
+  "author": "Maxime Gélinas <mgelinas@softframe.net>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "cm": "cz",
+    "cm:amend": "git commit --amend --no-edit",
+    "format": "yarn format:check --write",
+    "format:check": "prettier **/*.{js,jsx,ts,tsx,md,html,css}",
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "yarn lint --fix",
+    "release": "dotenv -- lerna publish"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@commitlint/config-lerna-scopes": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "dotenv-cli": "^4.0.0",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-only-warn": "^1.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.2.0",
+    "typescript": "^4.1.2"
+  }
+}
