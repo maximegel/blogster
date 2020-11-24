@@ -23,4 +23,10 @@ const runner = ({ reader, statusFetcher }: StatusCommandDeps) => async (globs?: 
     .then(statusView);
 
 export const statusCommand = (deps: StatusCommandDeps): Command =>
-  createCommand('status').arguments('[globs...]').customOption(platformsOption).action(runner(deps)) as Command;
+  createCommand('status')
+    .arguments('[globs...]')
+    .description('print remote post statuses', {
+      globs: 'patterns matching local posts to print e.g. "posts/**/post.md"',
+    })
+    .customOption(platformsOption)
+    .action(runner(deps)) as Command;

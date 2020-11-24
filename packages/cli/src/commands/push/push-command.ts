@@ -35,4 +35,10 @@ const runner = ({ reader, statusFetcher, pusher }: PushCommandDeps) => async (
     .then(pushView);
 
 export const pushCommand = (deps: PushCommandDeps): Command =>
-  createCommand('push').arguments('[globs...]').customOption(platformsOption).action(runner(deps)) as Command;
+  createCommand('push')
+    .arguments('[globs...]')
+    .description('publish or update local posts', {
+      globs: 'patterns matching local posts to publish or update e.g. "posts/**/post.md"',
+    })
+    .customOption(platformsOption)
+    .action(runner(deps)) as Command;

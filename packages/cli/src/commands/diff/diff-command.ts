@@ -23,4 +23,10 @@ const runner = ({ reader, statusFetcher }: DiffCommandDeps) => async (globs: str
     .then(diffView);
 
 export const diffCommand = (deps: DiffCommandDeps): Command =>
-  createCommand('diff').arguments('[globs...]').customOption(platformsOption).action(runner(deps)) as Command;
+  createCommand('diff')
+    .arguments('[globs...]')
+    .description('compare local posts with remote posts', {
+      globs: 'patterns matching local posts to compare e.g. "posts/**/post.md"',
+    })
+    .customOption(platformsOption)
+    .action(runner(deps)) as Command;

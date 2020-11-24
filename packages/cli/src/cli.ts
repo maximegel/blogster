@@ -62,7 +62,7 @@ import { statusCommand } from './commands/status';
         processors.excludeMetadata('coverImage'),
       ),
       formatter: formatters.prettier({ printWidth: 120, proseWrap: 'always' }),
-      stringifier: stringifier({ config }),
+      stringifier: stringifier(),
     }),
   }))();
 
