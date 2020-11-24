@@ -12,7 +12,3 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 - add medium and dev.to support ([7401e56](https://github.com/maximegel/blogster/commit/7401e5634a17d50358c23c38ba2877ef894052e1))
-
-## 0.0.1 (2020-11-24)
-
-**Note:** Version bump only for package @blogster/core
