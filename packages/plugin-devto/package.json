@@ -1,6 +1,6 @@
 {
   "name": "@blogster/plugin-devto",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "files": [
     "lib"
@@ -10,7 +10,7 @@
     "clean": "rimraf lib tsconfig.lib.tsbuildinfo"
   },
   "dependencies": {
-    "@blogster/core": "^0.0.0",
+    "@blogster/core": "^0.0.1",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
