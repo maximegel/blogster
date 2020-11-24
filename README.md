@@ -2,7 +2,10 @@
 
 <h2 align="center">Crosspost to Medium and Dev.to automagically from the CLI</h2>
 <p align="center">
-  <a href="#badge">
+  <a href="https://github.com/maximegel/blogster/actions?query=workflow%3Abuild">
+    <img alt="GitHub Actions build status" src="https://img.shields.io/github/workflow/status/maximegel/blogster/build/master?style=flat-square&logo=github">
+  </a>
+  <a href="https://github.com/semantic-release/semantic-release">
     <img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square">
   </a>
   <a href="http://commitizen.github.io/cz-cli">
