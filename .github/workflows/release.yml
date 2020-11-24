@@ -30,7 +30,10 @@ jobs:
       - name: Build
         run: yarn build
       - name: Release
-        run: yarn release
+        run: |
+          git config --global user.name "Maxime Gélinas"
+          git config --global user.email "mgelinas@softframe.net"
+          yarn release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
