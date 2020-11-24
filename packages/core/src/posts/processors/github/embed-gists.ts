@@ -35,7 +35,7 @@ export const embedGists = (config: { token: string }): PostProcessor => {
         });
 
     map(content, 'code', code => {
-      const filename = code.data?.gist?.filename;
+      const filename = (code.data?.gist as { filename: string })?.filename;
       if (!filename) return code;
       return { type: 'html', value: `<script src="${res.data.html_url}?file=${filename}"></script>` };
     });
