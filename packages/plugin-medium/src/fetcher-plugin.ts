@@ -1,6 +1,4 @@
-import { createPlugin } from '../../core/plugins';
-import { markdownBody, newPostRef } from '../../core/posts';
-import { PostFetcherPlugin } from '../../core/posts/fetcher';
+import { createPlugin, markdownBody, newPostRef, PostFetcherPlugin } from '@blogster/core';
 import { httpClient } from './client';
 import { converter, markups, paragraphs } from './converter';
 import { linkUrlResolvers } from './converter/markups/link';

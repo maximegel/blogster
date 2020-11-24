@@ -1,4 +1,4 @@
-import { createMultiPlugin } from '../../core/plugins';
+import { createMultiPlugin } from '@blogster/core';
 import { fetcherPlugin } from './fetcher-plugin';
 import { pusherPlugin } from './pusher-plugin';
 
