@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/maximegel/blogster/compare/@blogster/core@1.0.0...@blogster/core@1.0.1) (2020-11-24)
+
+### Bug Fixes
+
+- **core:** add `plugins` to config interface ([d1271d5](https://github.com/maximegel/blogster/commit/d1271d5de584454469635655c52cd28c361e2ffe))
+
 # 1.0.0 (2020-11-24)
 
 ### Bug Fixes
