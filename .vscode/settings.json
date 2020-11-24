@@ -43,7 +43,8 @@
     ".czrc": "json",
     ".commitlintrc": "json",
     ".huskyrc": "json",
-    ".lintstagedrc": "json"
+    ".lintstagedrc": "json",
+    ".markdownlint": "json"
   },
   "files.trimTrailingWhitespace": true,
   "typescript.tsdk": "node_modules\\typescript\\lib",

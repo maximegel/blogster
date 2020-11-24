@@ -1,21 +1,58 @@
-# Jumpstart with Lerna and Sementic Releases
+![Blogster Banner](https://raw.githubusercontent.com/maximegel/blogster/master/assets/banner.png)
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
+<h2 align="center">Crosspost to Medium and Dev.to automagically from the CLI</h2>
+<p align="center">
+  <a href="#badge">
+    <img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square">
+  </a>
+  <a href="http://commitizen.github.io/cz-cli">
+    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square">
+  </a>
+  <a href="https://lerna.js.org">
+    <img alt="Maintained with Lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg?style=flat-square">
+  </a>
+  <a href="https://github.com/prettier/prettier">
+    <img alt="Prettier code style" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
+  </a>
+</p>
 
-Getting started using Lerna and semantic releases with:
+## Introduction
 
-- [commitlint](https://github.com/conventional-changelog/commitlint)
-- [commitizen](https://github.com/commitizen/cz-cli)
-- [husky](https://github.com/typicode/husky)
-- [lint-staged](https://github.com/okonet/lint-staged)
-- [eslint](https://github.com/eslint/eslint)
-- [prettier](https://github.com/prettier/prettier)
-- [typescript](https://github.com/Microsoft/TypeScript)
+Blogster is an extendable CLI tool allowing you to your write blog posts once in Markdown and then publish them on
+multiple platforms in a single command.
 
-Since this is an example repository, packages are published to a local instance of [Verdaccio](https://github.com/verdaccio/verdaccio) (i.e. an on-premise NPM registry) instead of being published to NPM directly.
+### Highlights
 
-To run Verdaccio from a Docker container:
+- Posts written in Markdown
+- Crosspost to [Medium][medium] and [Dev.to][devto]
+- Automatic conversion between inline code blocks and embedded gists
+- Changes visualization between local and published posts
+
+## Getting started
+
+### Installation
+
+Install Blogster via `npm`:
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+cd /your/project/path
 ```
+
+```bash
+cd npm install @blogster/cli --save-dev
+```
+
+This will install Blogster locally as a dev dependency for your project.
+
+### Usage
+
+Use the help option to see the available commands:
+
+```bash
+npx bgs --help
+```
+
+<!-- References: -->
+
+[devto]: https://dev.to/
+[medium]: https://medium.com
