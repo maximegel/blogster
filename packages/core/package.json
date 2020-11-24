@@ -2,11 +2,14 @@
   "name": "@blogster/core",
   "version": "0.0.0",
   "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.lib.json"
+    "build": "tsc --project tsconfig.lib.json",
+    "clean": "rimraf lib tsconfig.lib.tsbuildinfo"
   },
   "peerDependencies": {
     "prettier": "^2.1.2"

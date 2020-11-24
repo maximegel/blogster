@@ -6,13 +6,12 @@
     "lib"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.lib.json"
+    "build": "tsc --project tsconfig.lib.json",
+    "clean": "rimraf lib tsconfig.lib.tsbuildinfo"
   },
   "dependencies": {
+    "@blogster/core": "^0.0.0",
     "node-fetch": "^2.6.1"
-  },
-  "peerDependencies": {
-    "@blogster/core": "^0.0.0"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.7"

@@ -10,7 +10,8 @@
     "cli.js"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.lib.json"
+    "build": "tsc --project tsconfig.lib.json",
+    "clean": "rimraf lib tsconfig.lib.tsbuildinfo"
   },
   "dependencies": {
     "@blogster/core": "^0.0.0",

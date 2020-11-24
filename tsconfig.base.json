@@ -1,13 +1,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "lib": ["es2020"],
+    "module": "commonjs",
+    "target": "es2018",
+    "composite": true,
     "declaration": true,
     "declarationMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "noEmit": false,
-    "composite": true,
-    "module": "commonjs"
+    "esModuleInterop": true
   }
 }

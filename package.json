@@ -10,8 +10,7 @@
   ],
   "scripts": {
     "build": "lerna run build",
-    "cm": "cz",
-    "cm:amend": "git commit --amend --no-edit",
+    "clean": "lerna run clean",
     "format": "yarn format:check --write",
     "format:check": "prettier **/*.{js,jsx,ts,tsx,md,html,css}",
     "lint": "eslint . --max-warnings=0",
@@ -35,6 +34,7 @@
     "lerna": "^3.22.1",
     "lint-staged": "^10.5.1",
     "prettier": "^2.2.0",
+    "rimraf": "^3.0.2",
     "typescript": "^4.1.2"
   }
 }

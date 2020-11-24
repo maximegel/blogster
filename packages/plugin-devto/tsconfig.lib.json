@@ -3,11 +3,12 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "lib",
+    "baseUrl": ".",
     "paths": {
       "@blogster/core": ["../core/src"]
-    },
-    "baseUrl": "./"
+    }
   },
   "include": ["src/**/*.ts"],
+  "exclude": ["lib/**/*.ts"],
   "references": [{ "path": "../core" }]
 }
