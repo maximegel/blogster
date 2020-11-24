@@ -1,8 +1,8 @@
 import chalk from 'chalk';
 import { Change } from 'diff';
-import { createAsyncComponent, createAsyncView, createComponent } from '~core/views';
-import { paddingRight } from '~core/views/attributes';
-import { a, div, span, strong } from '~core/views/elements';
+import { createAsyncComponent, createAsyncView, createComponent } from '../../core/views';
+import { paddingRight } from '../../core/views/attributes';
+import { a, div, span, strong } from '../../core/views/elements';
 
 export type DiffViewModel = {
   readonly title: string;

@@ -1,9 +1,9 @@
 import { Logger } from '@blogster/core';
 import chalk from 'chalk';
 import _ from 'lodash';
-import { createAsyncComponent, ViewElement } from '~core/views';
-import { paddingLeft, paddingRight } from '~core/views/attributes';
-import { br, div, strong } from '~core/views/elements';
+import { createAsyncComponent, ViewElement } from '../../core/views';
+import { paddingLeft, paddingRight } from '../../core/views/attributes';
+import { br, div, strong } from '../../core/views/elements';
 import { label } from './label-component';
 import { logEntry, LogEntryViewModel } from './log-entry-component';
 

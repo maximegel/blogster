@@ -5,9 +5,7 @@
     "outDir": "lib",
     "baseUrl": ".",
     "paths": {
-      "@blogster/core": ["../core/src"],
-      "~core/*": ["src/core/*"],
-      "~shared/*": ["src/shared/*"]
+      "@blogster/core": ["../core/src"]
     }
   },
   "include": ["src/**/*.ts"],

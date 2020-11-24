@@ -1,8 +1,8 @@
 import { Logger } from '@blogster/core';
-import { createAsyncView } from '~core/views';
-import { paddingX } from '~core/views/attributes';
-import { a, span, strong } from '~core/views/elements';
-import { taskList } from '~shared/views';
+import { createAsyncView } from '../../core/views';
+import { paddingX } from '../../core/views/attributes';
+import { a, span, strong } from '../../core/views/elements';
+import { taskList } from '../../shared/views';
 
 export type PushViewModel = {
   readonly action: 'publish' | 'update';

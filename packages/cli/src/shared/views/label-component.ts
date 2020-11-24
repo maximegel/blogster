@@ -1,7 +1,7 @@
 import chalk from 'chalk';
-import { createComponent } from '~core/views';
-import { paddingRight } from '~core/views/attributes';
-import { span } from '~core/views/elements';
+import { createComponent } from '../../core/views';
+import { paddingRight } from '../../core/views/attributes';
+import { span } from '../../core/views/elements';
 
 export const label = createComponent<'info' | 'warn' | 'error' | 'success' | string>(model => {
   const color =

@@ -7,7 +7,7 @@ import {
   PostStatusFetcher,
 } from '@blogster/core';
 import { Command, createCommand } from 'commander';
-import { PlatformsOption, platformsOption } from '~shared/options';
+import { PlatformsOption, platformsOption } from '../../shared/options';
 import { pushView } from './push-view';
 
 export interface PushCommandDeps {

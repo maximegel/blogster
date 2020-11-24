@@ -1,6 +1,6 @@
 import { isDesynced, PostReader, PostStatusFetcher } from '@blogster/core';
 import { Command, createCommand } from 'commander';
-import { PlatformsOption, platformsOption } from '~shared/options';
+import { PlatformsOption, platformsOption } from '../../shared/options';
 import { diffView } from './diff-view';
 
 export interface DiffCommandDeps {

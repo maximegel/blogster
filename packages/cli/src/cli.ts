@@ -28,7 +28,7 @@ import { statusCommand } from './commands/status';
     .use(configProviders.env)
     .config();
   const plugins = await pluginLoader({ config })
-    .use(pluginProviders.modulePaths('tools/blogster/plugins/devto', 'tools/blogster/plugins/medium'))
+    .use(pluginProviders.modulePaths(...config.plugins))
     .plugins();
   const deps = (() => ({
     reader: reader({ config }),

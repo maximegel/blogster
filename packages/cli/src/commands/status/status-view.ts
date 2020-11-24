@@ -1,8 +1,8 @@
 import { PostStatusType } from '@blogster/core';
 import chalk from 'chalk';
-import { createAsyncView, createComponent } from '~core/views';
-import { maxWidth, minWidth, paddingRight, paddingX } from '~core/views/attributes';
-import { a, div, span, strong } from '~core/views/elements';
+import { createAsyncView, createComponent } from '../../core/views';
+import { maxWidth, minWidth, paddingRight, paddingX } from '../../core/views/attributes';
+import { a, div, span, strong } from '../../core/views/elements';
 
 export type StatusViewModel = {
   readonly title: string;

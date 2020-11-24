@@ -1,6 +1,6 @@
 import { isPublished, isUnpublished, PostReader, PostStatusFetcher } from '@blogster/core';
 import { Command, createCommand } from 'commander';
-import { platformsOption, PlatformsOption } from '~shared/options';
+import { platformsOption, PlatformsOption } from '../../shared/options';
 import { statusView } from './status-view';
 
 export interface StatusCommandDeps {

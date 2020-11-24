@@ -21,7 +21,7 @@ export const createCustomOption = <T>(
 
 declare module 'commander' {
   export interface Command {
-    customOption<T>(option: CustomOption<T>): Command;
+    customOption<T>(option: CustomOption<T>): this;
   }
 }
 commander.Command.prototype.customOption = function <T>(this: commander.Command, option: CustomOption<T>) {

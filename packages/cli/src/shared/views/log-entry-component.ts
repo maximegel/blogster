@@ -1,6 +1,6 @@
 import chalk from 'chalk';
-import { createAsyncComponent } from '~core/views';
-import { br, div, span } from '~core/views/elements';
+import { createAsyncComponent } from '../../core/views';
+import { br, div, span } from '../../core/views/elements';
 import { label } from './label-component';
 
 export interface LogEntryViewModel {
