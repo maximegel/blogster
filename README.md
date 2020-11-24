@@ -35,17 +35,35 @@ multiple platforms in a single command.
 
 ### Installation
 
-Install Blogster via `npm`:
-
 ```bash
-cd /your/project/path
+npm install @blogster/cli --save-dev
 ```
 
-```bash
-cd npm install @blogster/cli --save-dev
+Since Blogster is useless without plugins, you will have to install some of them too.
+
+Available plugins are:
+
+- [@blogster/plugin-devto](https://www.npmjs.com/package/@blogster/plugin-devto)
+- [@blogster/plugin-medium](https://www.npmjs.com/package/@blogster/plugin-medium)
+
+### Configuration
+
+Add a file named `.blogsterrc.json` to your project root:
+
+```json
+{
+  "plugins": ["@blogster/plugin-devto", "@blogster/plugin-medium"],
+  "include": ["posts/**/post.md"]
+}
 ```
 
-This will install Blogster locally as a dev dependency for your project.
+Add a `.env` file containing your secrets token:
+
+```text
+BLOGSTER_DEVTO_API_KEY=<YOUR SECRET TOKEN>
+BLOGSTER_GH_TOKEN=<YOUR SECRET TOKEN>
+BLOGSTER_MEDIUM_TOKEN=<YOUR SECRET TOKEN>
+```
 
 ### Usage
 
