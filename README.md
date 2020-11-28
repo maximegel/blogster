@@ -177,11 +177,7 @@ Environment variables are used by plugins to load extra configuration required b
 
 Take a look at the documentation of each installed plugin to find out which environment variables you need.
 
-There are 3 different ways to set environment variables:
-
-- [Set in your configuration file](#option-1-configuration-file)
-- [Export as `BLOGSTER_*`](#option-2-blogster)
-- [Create a `.env` file](#option-3-dotenv)
+There are different ways to set environment variables. Each has a slightly different use case.
 
 ### Option 1: configuration file
 
