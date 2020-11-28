@@ -66,12 +66,12 @@ Now, open up your favorite IDE and some content to our `post.md` file:
 
 ```markdown
 ---
-title: Never Return Null Again
+title: My First Post
 description:
 coverImage: https://unsplash.com/photos/ualbj7tyJH0
 tags:
-  - first-post
   - blogster
+  - first-post
   - so-excited
 ---
 
