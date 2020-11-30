@@ -158,11 +158,53 @@ Or you can use npx (requires [npm@5.2.0](https://www.npmjs.com/package/npm/v/5.2
 npx bgs [options] [command]
 ```
 
-For all available commands run:
+### `bgs diff`
+
+Outputs changes between post files and published posts in diff format.
 
 ```bash
-npx bgs --help
+bgs diff [options] [file/dir/glob...]
 ```
+
+| Arguments            |                                                           |
+| -------------------- | --------------------------------------------------------- |
+| `[file/dir/glob...]` | Globs of post files to include e.g. `posts/\*\*/post.md`. |
+
+| Options                          |                                                                                                                                                                                    |
+| :------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--p --platforms <platforms...>` | List of platforms to include e.g. `dev.to, medium`. When none, all platforms are included. See the documentation of your configured plugins to know which platforms are available. |
+
+### `bgs push`
+
+Publishes or updates posts. Posts will be published as draft so you can review them before really publishing them.
+
+```bash
+bgs push [options] [file/dir/glob...]
+```
+
+| Arguments            |                                                           |
+| :------------------- | --------------------------------------------------------- |
+| `[file/dir/glob...]` | Globs of post files to include e.g. `posts/\*\*/post.md`. |
+
+| Options                          |                                                                                                                                                                                    |
+| :------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--p --platforms <platforms...>` | List of platforms to include e.g. `dev.to, medium`. When none, all platforms are included. See the documentation of your configured plugins to know which platforms are available. |
+
+### `bgs status`
+
+Outputs the status of each post i.e. "unpublished", "synced" or "desynced".
+
+```bash
+bgs status [options] [file/dir/glob...]
+```
+
+| Arguments            |                                                           |
+| :------------------- | --------------------------------------------------------- |
+| `[file/dir/glob...]` | Globs of post files to include e.g. `posts/\*\*/post.md`. |
+
+| Options                          |                                                                                                                                                                                    |
+| :------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--p --platforms <platforms...>` | List of platforms to include e.g. `dev.to, medium`. When none, all platforms are included. See the documentation of your configured plugins to know which platforms are available. |
 
 ## Configuration
 
@@ -187,7 +229,7 @@ either of the following places:
 
 Environment variables are used by plugins to load extra configuration required by them.
 
-Take a look at the documentation of each installed plugin to find out which environment variables you need.
+See the documentation of your configured plugins to know which environment variables need to be set.
 
 There are different ways to set environment variables. Each has a slightly different use case.
 
