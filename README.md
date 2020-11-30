@@ -170,9 +170,9 @@ bgs diff [options] [file/dir/glob...]
 | -------------------- | --------------------------------------------------------- |
 | `[file/dir/glob...]` | Globs of post files to include e.g. `posts/\*\*/post.md`. |
 
-| Options                          |                                                                                                                                                                                    |
-| :------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--p --platforms <platforms...>` | List of platforms to include e.g. `dev.to, medium`. When none, all platforms are included. See the documentation of your configured plugins to know which platforms are available. |
+| Options                   |                                                                                                                                                                                    |
+| :------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--p --platforms <names>` | List of platforms to include e.g. `dev.to, medium`. When none, all platforms are included. See the documentation of your configured plugins to know which platforms are available. |
 
 ### `bgs push`
 
@@ -186,9 +186,9 @@ bgs push [options] [file/dir/glob...]
 | :------------------- | --------------------------------------------------------- |
 | `[file/dir/glob...]` | Globs of post files to include e.g. `posts/\*\*/post.md`. |
 
-| Options                          |                                                                                                                                                                                    |
-| :------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--p --platforms <platforms...>` | List of platforms to include e.g. `dev.to, medium`. When none, all platforms are included. See the documentation of your configured plugins to know which platforms are available. |
+| Options                   |                                                                                                                                                                                    |
+| :------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--p --platforms <names>` | List of platforms to include e.g. `dev.to, medium`. When none, all platforms are included. See the documentation of your configured plugins to know which platforms are available. |
 
 ### `bgs status`
 
@@ -202,9 +202,9 @@ bgs status [options] [file/dir/glob...]
 | :------------------- | --------------------------------------------------------- |
 | `[file/dir/glob...]` | Globs of post files to include e.g. `posts/\*\*/post.md`. |
 
-| Options                          |                                                                                                                                                                                    |
-| :------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--p --platforms <platforms...>` | List of platforms to include e.g. `dev.to, medium`. When none, all platforms are included. See the documentation of your configured plugins to know which platforms are available. |
+| Options                   |                                                                                                                                                                                    |
+| :------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--p --platforms <names>` | List of platforms to include e.g. `dev.to, medium`. When none, all platforms are included. See the documentation of your configured plugins to know which platforms are available. |
 
 ## Configuration
 
