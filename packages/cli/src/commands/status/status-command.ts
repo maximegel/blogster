@@ -1,5 +1,6 @@
 import { isPublished, isUnpublished, PostReader, PostStatusFetcher } from '@blogster/core';
 import { Command, createCommand } from 'commander';
+import { globsArgument, GlobsArgument } from '../../shared/arguments';
 import { platformsOption, PlatformsOption } from '../../shared/options';
 import { statusView } from './status-view';
 
@@ -8,7 +9,10 @@ export interface StatusCommandDeps {
   readonly statusFetcher: PostStatusFetcher;
 }
 
-const runner = ({ reader, statusFetcher }: StatusCommandDeps) => async (globs?: string[], options?: PlatformsOption) =>
+const runner = ({ reader, statusFetcher }: StatusCommandDeps) => async (
+  globs?: GlobsArgument,
+  options?: PlatformsOption,
+) =>
   await reader
     .read(globs)
     .then(locals => statusFetcher.fetchStatuses(locals, options))
@@ -24,9 +28,9 @@ const runner = ({ reader, statusFetcher }: StatusCommandDeps) => async (globs?: 
 
 export const statusCommand = (deps: StatusCommandDeps): Command =>
   createCommand('status')
-    .arguments('[globs...]')
-    .description('print remote post statuses', {
-      globs: 'patterns matching local posts to print e.g. "posts/**/post.md"',
+    .arguments(globsArgument.name)
+    .description('Outputs the status of each post i.e. "unpublished", "synced" or "desynced".', {
+      ...globsArgument.description,
     })
     .customOption(platformsOption)
     .action(runner(deps)) as Command;

@@ -66,9 +66,16 @@ import { statusCommand } from './commands/status';
     }),
   }))();
 
-  program.addCommand(diffCommand(deps));
-  program.addCommand(pushCommand(deps));
-  program.addCommand(statusCommand(deps));
+  const pkg = require('../package.json');
+  program
+    .name(Object.keys(pkg.bin)[0])
+    .version(pkg.version, '-v, --version', 'Outputs Blogster CLI version.')
+    .helpOption('-h, --help', 'Lists available commands and their short descriptions.')
+    .addHelpCommand('help [command]', 'Shows a help message for this command in the console.');
+
+  [diffCommand(deps), pushCommand(deps), statusCommand(deps)].forEach(cmd =>
+    program.addCommand(cmd.helpOption('-h, --help', 'Shows a help message for this command in the console.')),
+  );
 
   await program.parseAsync(process.argv).catch((err: Error) => console.error(chalk.red(`\n${err.stack}\n`)));
 })();

@@ -7,6 +7,7 @@ import {
   PostStatusFetcher,
 } from '@blogster/core';
 import { Command, createCommand } from 'commander';
+import { globsArgument, GlobsArgument } from '../../shared/arguments';
 import { PlatformsOption, platformsOption } from '../../shared/options';
 import { pushView } from './push-view';
 
@@ -17,7 +18,7 @@ export interface PushCommandDeps {
 }
 
 const runner = ({ reader, statusFetcher, pusher }: PushCommandDeps) => async (
-  globs?: string[],
+  globs?: GlobsArgument,
   options?: PlatformsOption,
 ) =>
   await reader
@@ -36,9 +37,10 @@ const runner = ({ reader, statusFetcher, pusher }: PushCommandDeps) => async (
 
 export const pushCommand = (deps: PushCommandDeps): Command =>
   createCommand('push')
-    .arguments('[globs...]')
-    .description('publish or update local posts', {
-      globs: 'patterns matching local posts to publish or update e.g. "posts/**/post.md"',
-    })
+    .arguments(globsArgument.name)
+    .description(
+      'Publishes or updates posts.\nPosts will be published as draft so you can review them before really publishing them.',
+      { ...globsArgument.description },
+    )
     .customOption(platformsOption)
     .action(runner(deps)) as Command;

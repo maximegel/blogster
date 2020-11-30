@@ -1,5 +1,6 @@
 import { isDesynced, PostReader, PostStatusFetcher } from '@blogster/core';
 import { Command, createCommand } from 'commander';
+import { globsArgument, GlobsArgument } from '../../shared/arguments';
 import { PlatformsOption, platformsOption } from '../../shared/options';
 import { diffView } from './diff-view';
 
@@ -8,7 +9,10 @@ export interface DiffCommandDeps {
   readonly statusFetcher: PostStatusFetcher;
 }
 
-const runner = ({ reader, statusFetcher }: DiffCommandDeps) => async (globs: string[], options?: PlatformsOption) =>
+const runner = ({ reader, statusFetcher }: DiffCommandDeps) => async (
+  globs: GlobsArgument,
+  options?: PlatformsOption,
+) =>
   await reader
     .read(globs)
     .then(locals => statusFetcher.fetchStatuses(locals, options))
@@ -24,9 +28,9 @@ const runner = ({ reader, statusFetcher }: DiffCommandDeps) => async (globs: str
 
 export const diffCommand = (deps: DiffCommandDeps): Command =>
   createCommand('diff')
-    .arguments('[globs...]')
-    .description('compare local posts with remote posts', {
-      globs: 'patterns matching local posts to compare e.g. "posts/**/post.md"',
+    .arguments(globsArgument.name)
+    .description('Outputs changes between post files and published posts in diff format.', {
+      ...globsArgument.description,
     })
     .customOption(platformsOption)
     .action(runner(deps)) as Command;
