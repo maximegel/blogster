@@ -6,6 +6,5 @@
     "baseUrl": ".",
     "paths": {}
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["lib/**/*.ts"]
+  "include": ["src/**/*.ts"]
 }
