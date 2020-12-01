@@ -13,11 +13,11 @@ export const list = (options?: { bullet?: '-' | '+' | '*' }): ChainedParagraphCo
           .reduce(n => n + 1, 1);
       const out: string[] = [];
       // Prefixes with a bullet for unordered lists of with a number for ordered lists.
-      out.push(paragraph.type === 9 ? `${options.bullet} ` : `${num()}. `);
+      out.push(paragraph.type === 9 ? `${options?.bullet ?? '-'} ` : `${num()}. `);
       out.push(marked);
       out.push('\n');
       // Appends an empty line after the last item.
-      if (paragraphs[index + 1].type !== paragraph.type) out.push('\n');
+      if (paragraphs[index + 1]?.type !== paragraph.type) out.push('\n');
       return out;
     },
   }));
