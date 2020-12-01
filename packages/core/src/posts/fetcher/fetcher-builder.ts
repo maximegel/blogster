@@ -3,9 +3,9 @@ import { FetcherPluginOption } from '../fetcher/fetcher-plugin-option';
 import { fetcher, PostFetcher } from './fetcher';
 import { PostFetcherPlugin } from './fetcher-plugin';
 
-export const fetcherBuilder = (): FetcherWithNone => new FetcherBuilder();
+export const fetcherBuilder = (): FetcherWithNothing => new FetcherBuilder();
 
-class FetcherBuilder implements FetcherWithNone, FetcherWithPlugins {
+class FetcherBuilder implements FetcherWithNothing, FetcherWithPlugins {
   private pluginArr: PostFetcherPlugin[];
   private options: { predicate: (plugin: PostFetcherPlugin) => boolean; option: FetcherPluginOption }[] = [];
 
@@ -33,7 +33,7 @@ class FetcherBuilder implements FetcherWithNone, FetcherWithPlugins {
   }
 }
 
-interface FetcherWithNone {
+interface FetcherWithNothing {
   plugins(plugins: Plugin[]): FetcherWithPlugins;
 }
 

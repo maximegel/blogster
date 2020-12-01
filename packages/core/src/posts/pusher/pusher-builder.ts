@@ -3,9 +3,9 @@ import { PostPusher, pusher } from './pusher';
 import { PostPusherPlugin } from './pusher-plugin';
 import { PusherPluginOption } from './pusher-plugin-option';
 
-export const pusherBuilder = (): PusherWithNone => new PusherBuilder();
+export const pusherBuilder = (): PusherWithNothing => new PusherBuilder();
 
-class PusherBuilder implements PusherWithNone, PusherWithPlugins {
+class PusherBuilder implements PusherWithNothing, PusherWithPlugins {
   private pluginArr: PostPusherPlugin[];
   private options: { predicate: (plugin: PostPusherPlugin) => boolean; option: PusherPluginOption }[] = [];
 
@@ -33,7 +33,7 @@ class PusherBuilder implements PusherWithNone, PusherWithPlugins {
   }
 }
 
-interface PusherWithNone {
+interface PusherWithNothing {
   plugins(plugins: Plugin[]): PusherWithPlugins;
 }
 
