@@ -5,7 +5,7 @@ import { ChainedMarkupConverter, markupConverterChain } from './markup-converter
 import { ChainedParagraphConverter, paragraphConverterChain } from './paragraph-converter';
 
 function isFeaturedImgPara(para: PostParagraphDto, post: PostDto) {
-  const featuredImgId = post.value.virtuals.previewImage.imageId;
+  const featuredImgId = post.value.virtuals?.previewImage?.imageId;
   return para.type === 4 && para.metadata.id === featuredImgId;
 }
 
@@ -23,11 +23,11 @@ export const converter = ({
   markups: markupConverters,
 }: {
   paragraphs: ChainedParagraphConverter[];
-  markups: ChainedMarkupConverter[];
+  markups?: ChainedMarkupConverter[];
 }): MediumConverter => ({
   convert: async (post: PostDto): Promise<string> => {
     const { paragraphs, sections } = post.value.content.bodyModel;
-    const markupChain = markupConverterChain(...markupConverters);
+    const markupChain = markupConverterChain(...(markupConverters ?? []));
     const paragraphChain = paragraphConverterChain(...paragraphConverters);
     return (
       _(

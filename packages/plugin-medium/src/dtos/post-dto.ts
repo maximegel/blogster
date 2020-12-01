@@ -1,22 +1,13 @@
-import { PostParagraphDto } from './post-paragraph-dto';
+import { PostContentDto } from './post-content-dto';
 
 export interface PostDto {
   readonly value: {
     readonly id: string;
     readonly slug: string;
     readonly title: string;
-    readonly canonicalUrl: string;
-    readonly content: {
-      readonly subtitle: string;
-      readonly bodyModel: {
-        readonly paragraphs: PostParagraphDto[];
-        readonly sections: {
-          readonly name: string;
-          readonly startIndex: number;
-        }[];
-      };
-    };
-    readonly virtuals: {
+    readonly canonicalUrl?: string;
+    readonly content: PostContentDto;
+    readonly virtuals?: {
       readonly previewImage: {
         readonly imageId: string;
       };
@@ -25,7 +16,7 @@ export interface PostDto {
       }[];
     };
   };
-  readonly mentionedUsers: {
+  readonly mentionedUsers?: {
     readonly userId: string;
     readonly username: string;
     readonly twitterScreenName: string;

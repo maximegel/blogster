@@ -5,7 +5,7 @@ export interface PostParagraphDto {
   readonly type: number;
   readonly text: string;
   readonly markups: PostParagraphMarkupDto[];
-  readonly layout: number;
+  readonly layout?: number;
   readonly metadata?: Record<string, unknown>;
   readonly iframe?: {
     readonly mediaResourceId: string;

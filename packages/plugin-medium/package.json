@@ -16,6 +16,8 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.5.7"
+    "@types/faker": "^5.1.4",
+    "@types/node-fetch": "^2.5.7",
+    "faker": "^5.1.0"
   }
 }
