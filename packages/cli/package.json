@@ -1,6 +1,6 @@
 {
   "name": "@blogster/cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "bin": {
     "bgs": "cli.js"
@@ -14,7 +14,7 @@
     "clean": "rimraf lib tsconfig.lib.tsbuildinfo"
   },
   "dependencies": {
-    "@blogster/core": "^1.0.1",
+    "@blogster/core": "^1.0.2",
     "chalk": "^4.1.0",
     "commander": "^6.1.0",
     "strip-ansi": "^6.0.0",

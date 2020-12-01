@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/maximegel/blogster/compare/@blogster/plugin-medium@1.0.2...@blogster/plugin-medium@1.0.3) (2020-12-01)
+
+### Bug Fixes
+
+- **plugin-medium:** fix "cannot read property of null" errors in list conversion ([8d0434d](https://github.com/maximegel/blogster/commit/8d0434d55c1f2320371bd9d33147fea9595b5dbe))
+
 ## [1.0.2](https://github.com/maximegel/blogster/compare/@blogster/plugin-medium@1.0.1...@blogster/plugin-medium@1.0.2) (2020-11-24)
 
 ### Bug Fixes

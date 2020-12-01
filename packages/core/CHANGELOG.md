@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/maximegel/blogster/compare/@blogster/core@1.0.1...@blogster/core@1.0.2) (2020-12-01)
+
+### Bug Fixes
+
+- **core:** no longer fails without a config file ([45fc310](https://github.com/maximegel/blogster/commit/45fc310c943f85ff997b2ad3002d23773e78a665))
+
 ## [1.0.1](https://github.com/maximegel/blogster/compare/@blogster/core@1.0.0...@blogster/core@1.0.1) (2020-11-24)
 
 ### Bug Fixes
