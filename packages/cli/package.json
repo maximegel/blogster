@@ -21,6 +21,8 @@
     "terminal-link": "^2.1.1"
   },
   "devDependencies": {
-    "@types/chalk": "^2.2.0"
+    "@types/chalk": "^2.2.0",
+    "@types/concat-stream": "^1.6.0",
+    "concat-stream": "^2.0.0"
   }
 }

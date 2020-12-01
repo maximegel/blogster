@@ -1,4 +1,4 @@
-import { factories } from '../../../testing';
+import { factories } from '~testing';
 import { converter } from '../converter';
 import { list } from './list';
 
