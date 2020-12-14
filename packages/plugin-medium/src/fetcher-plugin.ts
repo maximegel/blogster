@@ -1,4 +1,4 @@
-import { createPlugin, markdownBody, newPostRef, PostFetcherPlugin } from '@blogster/core';
+import { createPlugin, PostFetcherPlugin } from '@blogster/core';
 import { httpClient } from './client';
 import { converter, markups, paragraphs } from './converter';
 import { linkUrlResolvers } from './converter/markups/link';
@@ -10,8 +10,8 @@ export const fetcherPlugin = createPlugin<PostFetcherPlugin>(({ config }) => {
     fetchRemoteRefs: async () =>
       await client.getUserPosts().then(posts =>
         posts.map(post => ({
-          ...newPostRef({ title: post.title }),
-          remoteId: post.id,
+          id: post.id,
+          title: post.title,
           publicUrl: `https://medium.com/p/${post.id}`,
         })),
       ),
@@ -23,7 +23,7 @@ export const fetcherPlugin = createPlugin<PostFetcherPlugin>(({ config }) => {
             paragraphs.text(),
             paragraphs.heading(),
             paragraphs.list(),
-            paragraphs.codeBlock(),
+            paragraphs.code(),
             paragraphs.quote(),
             paragraphs.embed(client, { resolvers: [embedResolvers.gist()] }),
           ],
@@ -33,21 +33,21 @@ export const fetcherPlugin = createPlugin<PostFetcherPlugin>(({ config }) => {
             markups.inlineCode(),
             markups.link({
               urlResolvers: [
-                linkUrlResolvers.twitterProfile(),
-                linkUrlResolvers.mediumProfile(),
+                linkUrlResolvers.twitterAccount(),
+                linkUrlResolvers.mediumAccount(),
                 linkUrlResolvers.mediumRedirect(),
               ],
             }),
           ],
         }).convert(dto);
         return {
-          ...ref,
-          body: markdownBody(markdown, {
+          content: markdown,
+          metadata: {
             title: dto.value.title,
             description: dto.value.content.subtitle,
             // TODO: Use a processor for tags filtering.
             tags: dto.value.virtuals.tags.map(tag => tag.slug).filter(tag => tag !== 'programming'),
-          }),
+          },
         };
       }),
   };

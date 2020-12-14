@@ -1,10 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Plugin } from '../../plugins';
-import { RemotePost, RemotePostRef } from '../post';
-import { PostPlatform } from '../post-platform';
+import { RemotePostRef } from '../post';
+import { PostMetadata } from '../post-metadata';
 
-export class PostFetcherPlugin implements Plugin<{ platform: PostPlatform }> {
-  metadata = { platform: { name: '' } };
-  fetchRemoteRefs = (): Promise<Omit<RemotePostRef, 'platform'>[]> => Promise.resolve([]);
-  fetchRemoteBody = (ref: RemotePostRef): Promise<null | RemotePost> => null;
+export interface RemotePostRefPayload {
+  readonly id: string | number;
+  readonly title: string;
+  readonly publicUrl: string;
+}
+
+export interface RemotePostBodyPayload {
+  readonly content: string;
+  readonly metadata: PostMetadata;
+}
+
+export class PostFetcherPlugin implements Plugin<{ platform: string }> {
+  metadata = { platform: '' };
+  fetchRemoteRefs = (): Promise<RemotePostRefPayload[]> => Promise.resolve([]);
+  fetchRemoteBody = (ref: RemotePostRef): Promise<null | RemotePostBodyPayload> => null;
 }
