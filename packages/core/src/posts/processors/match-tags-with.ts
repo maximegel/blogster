@@ -8,5 +8,6 @@ export const matchTagsWith = (other: Post): PostProcessor =>
   createMetadataProcessor(metadata => {
     const otherTags = other.body.metadata.tags ?? [];
     const tags = metadata.tags?.map(tag => otherTags.find(otherTag => normalize(tag) === normalize(otherTag)) ?? tag);
+    if (!tags?.length) return metadata;
     return { ...metadata, tags };
   });
