@@ -8,7 +8,7 @@ import { PostMetadata } from './post-metadata';
 
 export interface PostProcessor {
   then(next: PostProcessor): PostProcessor;
-  process<P extends Post>(post: P): Promise<P>;
+  process<P extends Pick<Post, 'body'>>(post: P): Promise<P>;
 }
 
 export const createMetadataProcessor = (fn: (metadata: PostMetadata) => PostMetadata): PostProcessor => {
@@ -56,8 +56,8 @@ export const createAsyncContentProcessor = (
 };
 
 export const processorChain = (...processors: PostProcessor[]): PostProcessor => ({
-  then: (next: PostProcessor) => processorChain(...processors, next),
-  process: <P extends Post>(post: P): Promise<P> =>
+  then: next => processorChain(...processors, next),
+  process: post =>
     processors.reduce(
       async (p, next) => next.process(await p),
       // Clones once instead of inside each processor.
