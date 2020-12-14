@@ -166,9 +166,9 @@ Outputs changes between post files and published posts in diff format.
 bgs diff [options] [file/dir/glob...]
 ```
 
-| Arguments            |                                                           |
-| -------------------- | --------------------------------------------------------- |
-| `[file/dir/glob...]` | Globs of post files to include e.g. `posts/\*\*/post.md`. |
+| Arguments            |                                                         |
+| -------------------- | ------------------------------------------------------- |
+| `[file/dir/glob...]` | Globs of post files to include e.g. `posts/**/post.md`. |
 
 | Options                   |                                                                                                                                                                                    |
 | :------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -182,9 +182,9 @@ Publishes or updates posts. Posts will be published as draft so you can review t
 bgs push [options] [file/dir/glob...]
 ```
 
-| Arguments            |                                                           |
-| :------------------- | --------------------------------------------------------- |
-| `[file/dir/glob...]` | Globs of post files to include e.g. `posts/\*\*/post.md`. |
+| Arguments            |                                                         |
+| :------------------- | ------------------------------------------------------- |
+| `[file/dir/glob...]` | Globs of post files to include e.g. `posts/**/post.md`. |
 
 | Options                   |                                                                                                                                                                                    |
 | :------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -198,9 +198,9 @@ Outputs the status of each post i.e. "unpublished", "synced" or "desynced".
 bgs status [options] [file/dir/glob...]
 ```
 
-| Arguments            |                                                           |
-| :------------------- | --------------------------------------------------------- |
-| `[file/dir/glob...]` | Globs of post files to include e.g. `posts/\*\*/post.md`. |
+| Arguments            |                                                         |
+| :------------------- | ------------------------------------------------------- |
+| `[file/dir/glob...]` | Globs of post files to include e.g. `posts/**/post.md`. |
 
 | Options                   |                                                                                                                                                                                    |
 | :------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -210,12 +210,12 @@ bgs status [options] [file/dir/glob...]
 
 The default behavior of Blogster can be modified by supplying any of the configuration options:
 
-| Option    | Default | Description                                                                           |
-| --------- | ------- | ------------------------------------------------------------------------------------- |
-| `plugins` | `[]`    | A list of plugin names e.g. `@blogster/plugin-medium`                                 |
-| `env`     | `[]`    | Any values to be set as environment variables                                         |
-| `include` | `[]`    | A list of filenames or patterns to include in tracked blog posts e.g. `posts/**/*.md` |
-| `exclude` | `[]`    | A list of filenames or patterns to exclude from tracked blog posts                    |
+| Option    | Default | Description                                                                              |
+| --------- | ------- | ---------------------------------------------------------------------------------------- |
+| `plugins` | `[]`    | A list of plugin names e.g. `@blogster/plugin-medium`                                    |
+| `env`     | `[]`    | Any values to be set as environment variables                                            |
+| `include` | `[]`    | A list of filenames or patterns to include in tracked blog posts e.g. `posts/**/post.md` |
+| `exclude` | `[]`    | A list of filenames or patterns to exclude from tracked blog posts                       |
 
 Thanks to [Cosmiconfig](https://github.com/davidtheclark/cosmiconfig), the configuration can be loaded from
 either of the following places:
