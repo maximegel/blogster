@@ -7,6 +7,6 @@ export { matchTagsWith } from './match-tags-with';
 export { normalizeApostrophes } from './normalize-apostrophes';
 export { normalizeUrls } from './normalize-urls';
 export { normalizeWhitespaces } from './normalize-whitespaces';
-export { stripCodeBlockAttrs } from './strip-code-block-attrs';
+export { stripCodeAttrs } from './strip-code-attrs';
 export { stripComments } from './strip-comments';
 export * as unsplash from './unsplash';
