@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "types": ["jest", "node"],
+    "paths": {
+      "@blogster/core": ["../core/src"]
+    }
+  },
+  "include": ["**/*.ts"],
+  "references": [{ "path": "../core" }]
+}

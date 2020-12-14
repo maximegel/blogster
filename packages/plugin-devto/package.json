@@ -16,6 +16,7 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.5.7"
+    "@types/node-fetch": "^2.5.7",
+    "jest-fetch-mock": "^3.0.3"
   }
 }

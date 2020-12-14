@@ -12,51 +12,38 @@ export interface DevtoClient {
   updateArticle(id: string | number, dto: UpdateArticleDto): Promise<void>;
 }
 export interface DevtoClientConfig {
-  readonly auth: string;
+  readonly auth?: string;
 }
 
-export const httpClient = (config: DevtoClientConfig): DevtoClient => ({
+export const httpClient = (config?: DevtoClientConfig): DevtoClient => ({
   createUserArticle: async dto => {
     await fetch('https://dev.to/api/articles', {
       method: 'POST',
-      headers: { ...jsonContentHeader, ...authHeader(config.auth) },
+      headers: { ...jsonContentHeader, ...authHeader(config?.auth) },
       body: JSON.stringify({ article: dto }),
-    })
-      .then(ensuresSuccessfulStatus)
-      .then(res => res.json())
-      .then(body => data<unknown>(body));
+    }).then(ensuresResponseOf<unknown>());
   },
 
-  getArticle: async id =>
-    await fetch(`https://dev.to/api/articles/${id}`)
-      .then(res => res.json())
-      .then(body => data<ArticleDto>(body)),
+  getArticle: async id => await fetch(`https://dev.to/api/articles/${id}`).then(ensuresResponseOf<ArticleDto>()),
 
   getUserArticles: async () => {
     const { username } = await getUser(config);
-    return await fetch(`https://dev.to/api/articles?username=${username}`)
-      .then(res => res.json())
-      .then(body => data<ArticlesDto>(body));
+    return await fetch(`https://dev.to/api/articles?username=${username}`).then(ensuresResponseOf<ArticlesDto>());
   },
 
   updateArticle: async (id, dto) => {
     await fetch(`https://dev.to/api/articles/${id}`, {
-      method: 'POST',
-      headers: { ...jsonContentHeader, ...authHeader(config.auth) },
+      method: 'PUT',
+      headers: { ...jsonContentHeader, ...authHeader(config?.auth) },
       body: JSON.stringify({ article: dto }),
-    })
-      .then(ensuresSuccessfulStatus)
-      .then(res => res.json())
-      .then(body => data<unknown>(body));
+    }).then(ensuresResponseOf<unknown>());
   },
 });
 
-let getUser = async (config: DevtoClientConfig) => {
+let getUser = async (config?: DevtoClientConfig) => {
   const dto: UserDto = await fetch(`https://dev.to/api/users/me`, {
-    headers: { ...jsonContentHeader, ...authHeader(config.auth) },
-  })
-    .then(res => res.json())
-    .then(body => data<UserDto>(body));
+    headers: { ...jsonContentHeader, ...authHeader(config?.auth) },
+  }).then(ensuresResponseOf<UserDto>());
   // Caches future calls.
   getUser = () => Promise.resolve(dto);
   return dto;
@@ -65,12 +52,9 @@ let getUser = async (config: DevtoClientConfig) => {
 const authHeader = (apiKey: DevtoClientConfig['auth']) => ({ 'Api-Key': apiKey });
 const jsonContentHeader = { 'Content-Type': 'application/json' };
 
-const data = <T>(body: Record<string, unknown>): T => {
-  if (body.error) throw new Error(`Dev.to API request failed with message: ${body.error}`);
-  return body as T;
-};
-
-const ensuresSuccessfulStatus = (res: Response): Response => {
-  if (res.status >= 300) throw new Error(`Dev.to API request failed with status "${res.status}".`);
-  return res;
+const ensuresResponseOf = <T>() => async (res: Response): Promise<T> => {
+  const body = await res.json().catch(() => null);
+  if (res.ok) return body as T;
+  if (!body) throw new Error(`Dev.to API request failed with ${res.status} (${res.statusText}).`);
+  if (body.error) throw new Error(`Dev.to API request failed with ${res.status} (${res.statusText}): ${body.error}`);
 };
