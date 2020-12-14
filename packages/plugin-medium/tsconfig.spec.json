@@ -5,8 +5,7 @@
     "baseUrl": ".",
     "types": ["jest", "node"],
     "paths": {
-      "@blogster/core": ["../core/src"],
-      "~testing": ["testing"]
+      "@blogster/core": ["../core/src"]
     }
   },
   "include": ["**/*.ts"],

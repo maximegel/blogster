@@ -49,19 +49,20 @@ export const converter = ({
           // If a section starts here, appends a section divider.
           if (
             sections
-              .map(s => s.startIndex)
-              .filter(startIndex => startIndex > 0)
-              .includes(paragraphs.findIndex(p => p.name === paragraph.name))
+              ?.map(s => s.startIndex)
+              ?.filter(startIndex => startIndex > 0)
+              ?.includes(paragraphs.findIndex(p => p.name === paragraph.name))
           )
             (await out).push('---\n\n');
 
           // Creates an array of tokens indexed by the position at which they appear in the paragraph text.
-          const markupTokens = paragraph.markups?.reduce((arr, markup) => {
-            const { prefix, suffix } = markupChain({ markup, paragraph, post });
-            arr[markup.start] = prefix + (arr[markup.start] ?? '');
-            arr[markup.end] = (arr[markup.end] ?? '') + suffix;
-            return arr;
-          }, [] as string[]);
+          const markupTokens =
+            paragraph.markups?.reduce((arr, markup) => {
+              const { prefix, suffix } = markupChain({ markup, paragraph, post });
+              arr[markup.start] = prefix + (arr[markup.start] ?? '');
+              arr[markup.end] = (arr[markup.end] ?? '') + suffix;
+              return arr;
+            }, [] as string[]) ?? [];
           const marked =
             paragraph.text
               // Converts the text to an array of characters.

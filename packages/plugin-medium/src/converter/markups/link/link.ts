@@ -10,7 +10,7 @@ export const link = (options?: { urlResolvers?: ChainedLinkUrlResolver[] }): Cha
     convert: ctx => {
       const { markup } = ctx;
       const url = linkUrlResolverChain(...(options?.urlResolvers ?? []))(ctx);
-      const alt = markup.title ? `"${!!markup.title}"` : '';
-      return { prefix: '[', suffix: `](${url} ${alt}`.trimEnd() + ')' };
+      const alt = markup.title ? `"${markup.title}"` : '';
+      return { prefix: '[', suffix: `](${url ?? ''} ${alt}`.trimEnd() + ')' };
     },
   }));

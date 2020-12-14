@@ -6,7 +6,7 @@ export const quote = (): ChainedParagraphConverter =>
     convert: ({ marked, paragraph }) =>
       paragraph.type === 7
         ? // If it's a large quote, prefixes all lines with `> ##`.
-          ['> ##', marked.replace(/\n/g, '\n> ##'), '\n\n']
+          ['> ## ', marked.replace(/\n/g, '\n> ##'), '\n\n']
         : // Otherwise, adds `>` as the first character.
-          ['>', marked, '\n\n'],
+          ['> ', marked, '\n\n'],
   }));

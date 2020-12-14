@@ -3,8 +3,8 @@ import { PostContentDto } from './post-content-dto';
 export interface PostDto {
   readonly value: {
     readonly id: string;
-    readonly slug: string;
-    readonly title: string;
+    readonly slug?: string;
+    readonly title?: string;
     readonly canonicalUrl?: string;
     readonly content: PostContentDto;
     readonly virtuals?: {
@@ -18,7 +18,7 @@ export interface PostDto {
   };
   readonly mentionedUsers?: {
     readonly userId: string;
-    readonly username: string;
-    readonly twitterScreenName: string;
+    readonly username?: string;
+    readonly twitterScreenName?: string;
   }[];
 }

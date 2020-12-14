@@ -1,4 +1,4 @@
-export { codeBlock } from './code-block';
+export { code } from './code';
 export { embed } from './embed';
 export { heading } from './heading';
 export { list } from './list';

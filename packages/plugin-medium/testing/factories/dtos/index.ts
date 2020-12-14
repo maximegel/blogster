@@ -1,1 +1,0 @@
-export { createPost } from './post';

@@ -1,7 +1,7 @@
 import { ChainedParagraphConverter, createParagraphConverter } from '../paragraph-converter';
 
-export const codeBlock = (): ChainedParagraphConverter =>
+export const code = (): ChainedParagraphConverter =>
   createParagraphConverter(() => ({
     canConvert: ({ paragraph }) => paragraph.type === 8,
-    convert: ({ marked }) => ['\n```\n', marked, '\n```\n'],
+    convert: ({ marked }) => ['```\n', marked, '\n```\n\n'],
   }));

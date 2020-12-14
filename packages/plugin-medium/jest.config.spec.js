@@ -10,6 +10,7 @@ module.exports = {
   displayName: name,
   rootDir: '../..',
   testRegex: `(packages/${packageName}/src/.*\\.(test|spec))\\.ts$`,
+  setupFilesAfterEnv: [`<rootDir>/packages/${packageName}/jest-setup.ts`],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: `<rootDir>/packages/${packageName}/` }),
   globals: {
     'ts-jest': {

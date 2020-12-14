@@ -1,3 +1,3 @@
-export { mediumProfile } from './medium-profile';
+export { mediumAccount } from './medium-account';
 export { mediumRedirect } from './medium-redirect';
-export { twitterProfile } from './twitter-profile';
+export { twitterAccount } from './twitter-account';
