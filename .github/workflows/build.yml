@@ -29,6 +29,10 @@ jobs:
         run: yarn lint
       - name: Build
         run: yarn build
+      - name: Run unit tests
+        run: yarn test
+      - name: Run e2e tests
+        run: yarn e2e
       # - name: Release
       #   run: |
       #     git config --global user.name "Maxime Gélinas"
