@@ -1,17 +1,13 @@
-import { run } from '~support';
+import { cli } from '~support';
 
 describe('help option', () => {
   it('should output help for all commands at root level', async () => {
-    const output = await run('--help');
-    expect(output).toIncludeMultiple([
+    await expect(cli.exec('--help')).resolves.toIncludeMultiple([
       'Usage: bgs',
       'Options:',
       '--version',
       '--help',
       'Commands:',
-      'diff',
-      'push',
-      'status',
       'help',
     ]);
   });

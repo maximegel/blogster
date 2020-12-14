@@ -22,7 +22,9 @@
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
-    "@types/concat-stream": "^1.6.0",
-    "concat-stream": "^2.0.0"
+    "@types/dedent": "^0.7.0",
+    "@types/fs-extra": "^9.0.4",
+    "dedent": "^0.7.0",
+    "fs-extra": "^9.0.1"
   }
 }

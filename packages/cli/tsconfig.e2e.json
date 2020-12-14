@@ -5,8 +5,10 @@
     "baseUrl": ".",
     "types": ["jest", "jest-extended", "node"],
     "paths": {
+      "@blogster/core": ["../core/src"],
       "~support": ["e2e/support"]
     }
   },
-  "include": ["e2e/**/*.ts"]
+  "include": ["e2e/**/*.ts", "e2e/**/*.json"],
+  "references": [{ "path": "../core" }]
 }

@@ -10,7 +10,7 @@ module.exports = {
   displayName: name,
   rootDir: '../..',
   testRegex: `(packages/${packageName}/e2e/.*\\.(test|spec))\\.ts$`,
-  setupFilesAfterEnv: ['jest-extended'],
+  setupFilesAfterEnv: ['jest-extended', `<rootDir>/packages/${packageName}/jest-setup.e2e.ts`],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: `<rootDir>/packages/${packageName}/` }),
   globals: {
     'ts-jest': {
