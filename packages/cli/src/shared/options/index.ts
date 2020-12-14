@@ -1,1 +1,1 @@
-export * from './platforms-option';
+export * from './platforms';

@@ -1,1 +1,1 @@
-export * from './globs-argument';
+export * from './globs';

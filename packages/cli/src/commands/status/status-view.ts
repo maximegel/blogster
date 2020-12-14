@@ -38,5 +38,5 @@ const statusLabel = createComponent<PostStatusType>(model => {
       : model === 'desynced'
       ? chalk.bgRed
       : chalk;
-  return span(model).attrs(minWidth(width), paddingX(1)).styles(bgColor.black);
+  return span(model.toUpperCase()).attrs(minWidth(width), paddingX(1)).styles(bgColor.black);
 });
