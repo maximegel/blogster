@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "tsc --project tsconfig.lib.json",
-    "clean": "rimraf lib tsconfig.lib.tsbuildinfo"
+    "clean": "rimraf lib tsconfig.lib.tsbuildinfo e2e/tmp e2e/fixtures/plugins/**/*.json"
   },
   "dependencies": {
     "@blogster/core": "^1.0.2",

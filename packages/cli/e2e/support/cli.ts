@@ -49,9 +49,9 @@ class Cli {
     return this;
   }
 
-  mockPlugin(modulePath: string, returns: Record<string, unknown>): void {
-    this.mockFile(modulePath + '.json', JSON.stringify(returns));
-    this.mocks.plugins[modulePath + '.ts'] = returns;
+  mockPlugin(modulePath: string, returns?: Record<string, unknown>): void {
+    if (returns) this.mockFile(modulePath + '.json', JSON.stringify(returns));
+    this.mocks.plugins[modulePath + '.ts'] = returns ?? {};
   }
 
   mockPlugins(moduleReturns: Record<string, Record<string, unknown>>): void {
@@ -69,7 +69,7 @@ class Cli {
   }
 
   resetMocks(): void {
-    for (const path of this.mockedFiles) fs.unlinkSync(path);
+    // for (const path of this.mockedFiles) fs.unlinkSync(path);
     this.mocks = this.defaults;
   }
 

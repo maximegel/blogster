@@ -11,7 +11,7 @@
   "scripts": {
     "bgs": "ts-node --project packages/cli/tsconfig.lib.json -r tsconfig-paths/register packages/cli/src/cli.ts",
     "test": "jest --config=jest.config.spec.js",
-    "e2e": "jest --config=jest.config.e2e.js",
+    "e2e": "jest --config=jest.config.e2e.js --runInBand --silent",
     "build": "lerna run build",
     "clean": "lerna run clean",
     "format": "yarn format:check --write",
